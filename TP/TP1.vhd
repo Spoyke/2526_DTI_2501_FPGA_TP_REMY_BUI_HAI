@@ -10,5 +10,5 @@ end entity TP1;
 
 architecture rtl of TP1 is
 begin
-    led0 <= pushl;
+    led0 <= not pushl;
 end architecture rtl;
