@@ -37,6 +37,8 @@ On obtient : led0 <= not pushl;
 
 ![Image](Schema_led_blink_og.png)
 
+Faire la comparaison
+
 
 7) En adaptant la fréquence, on a :
 
@@ -48,13 +50,15 @@ On obtient : led0 <= not pushl;
 
 ![Image](Schema_led_blink_delay_og.jpg)
 
+Faire la comparaison
+
 11) Le "_n" dans "i_rst_n" signifie que l'entrée est inversé. Ce qui signifie que l'entrée est active à l'état bas. 
 
 
 
 ## 5 - Chenillard
 
-On a coder le chenillard et on l'a validé.
+On a codé le chenillard et on l'a validé.
 
 
 
@@ -62,12 +66,30 @@ On a coder le chenillard et on l'a validé.
 # Petit projet : écran magique
 
 
-2) La présence de deux bascules nous permet avec l'horloge d'avoir en mémoire 2 états à des moments différents : au moment où il y a un front montant au niveau de la bascule A, la bascule A sauvegarde l'état de l'entrée. La bascule B va sauvergarder cet état. Or si l'entrée change d'état entre temps, la bascule A et B auront des états différents.
+## 1 - Gestion des encodeurs
+
+2) 
+La présence de deux bascules nous permet avec l'horloge d'avoir en mémoire 2 états à des moments différents : au moment où il y a un front montant au niveau de la bascule A, la bascule A sauvegarde l'état de l'entrée. La bascule B va sauvergarder cet état. Or si l'entrée change d'état entre temps, la bascule A et B auront des états différents.
 
 On a alors un front
 
 On peut détecter ce front avec un xor (la sortie vaut 1 si les entrées sont différentes).
 On peut différencier un front montant d'un front descendant en faisant un not sur la sortie de la bascule B : si not(sortie) = 0 on a un front montant et sinon un front descendant.
+
+Le code a été validé.
+
+
+
+## 3 - Contrôleur HDMI
+
+5) Après avoir fait les modifications nécessaire, on affiche :
+
+![Image](Display_1.png)
+
+Les bits qui correspondent au rouge sont les bits 23 à 16
+Les bits qui correspondent au vert sont les bits 15 à  8
+Les bits qui correspondent au bleu sont les bits 7 à 0 (tous mis à 0)
+
 
 
 
