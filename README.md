@@ -19,6 +19,13 @@ On synthétise le projet et on attribue les pins.
 
 ## 4 - Compilation et programmation de la carte
 
+
+3) On trace un premier schéma correspondant au code pour la LED
+
+![Image](Schema_led_blink.png)
+
+
+
 10) 
 Après avoir reprogrammé la carte, on remarque que le comportement de la LED est inversé. Il suffit de rajouter un "not" dans la ligne : led0 <= pushl; pour inverser le comportement inversé. 
 
@@ -33,10 +40,33 @@ On obtient : led0 <= not pushl;
 ![Image](Schema_led_blink.png)
 
 
+4) Le schéma proposé par quartus est
+
+![Image](Schema_led_blink_og.png)
+
+
+7) En adaptant la fréquence, on a :
+
+
+![Image](Schema_led_blink_delay.png)
+
+
+8) On a le nouveau schéma sur RTL Viewer:
+
+![Image](Schema_led_blink_delay_og.png)
+
 11) Le "_n" dans "i_rst_n" signifie que l'entrée est inversé. Ce qui signifie que l'entrée est active à l'état bas. 
 
 
 
+## 5 - Chenillard
+
+On a coder le chenillard et on l'a validé.
+
+
+
+
+# Petit projet : écran magique
 
 
 
@@ -44,7 +74,6 @@ On obtient : led0 <= not pushl;
 
 
 
-# TP Séance 2
 
 
 
