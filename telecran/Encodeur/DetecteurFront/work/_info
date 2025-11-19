@@ -1,0 +1,168 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/sdpr/Documents/FPGA/Controlleur_HDMI/Encodeur/DetecteurFront
+Ebasculed
+Z1 w1760720469
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 14
+R0
+Z4 8BasculeD/BasculeD.vhd
+Z5 FBasculeD/BasculeD.vhd
+l0
+L4 1
+VH50UC8C96`:3?ZBBGddSn2
+!s100 jYMOC15zfTS6h1<zRSo=m0
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1760721539
+!i10b 1
+Z8 !s108 1760721539.000000
+Z9 !s90 -reportprogress|300|BasculeD/BasculeD.vhd|
+Z10 !s107 BasculeD/BasculeD.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+Z12 DEx4 work 8 basculed 0 22 H50UC8C96`:3?ZBBGddSn2
+!i122 14
+l14
+Z13 L13 11
+Z14 VHi2g5fQ=WSX:zL@2>THA?0
+Z15 !s100 1HlNdS><zKBbKGc3BQ3lZ0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Edetecteurfront
+Z16 w1760721536
+R2
+R3
+!i122 11
+R0
+Z17 8DetecteurFront.vhd
+Z18 FDetecteurFront.vhd
+l0
+L4 1
+V31PPfM^l0MREjGYE2eEi:1
+!s100 PN7US[_l^W7TTN@^jPJ:c2
+R6
+32
+R7
+!i10b 1
+R8
+Z19 !s90 -reportprogress|300|DetecteurFront.vhd|
+Z20 !s107 DetecteurFront.vhd|
+!i113 1
+R11
+Abehavior
+R2
+R3
+Z21 DEx4 work 14 detecteurfront 0 22 31PPfM^l0MREjGYE2eEi:1
+!i122 11
+l39
+L14 53
+V50YPT0NT:b_9;M4DEA87T1
+!s100 `RWMA68c=H@YMXN_^M>:Y2
+R6
+32
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 1
+R11
+Edetecteurfront_tb
+Z22 w1760721215
+R2
+R3
+!i122 12
+R0
+Z23 8DetecteurFront_tb.vhd
+Z24 FDetecteurFront_tb.vhd
+l0
+L4 1
+V<a>EPd2];517kZcGnRk:30
+!s100 77V7IWd6K;a_Xm>U@]Hki1
+R6
+32
+R7
+!i10b 1
+R8
+Z25 !s90 -reportprogress|300|DetecteurFront_tb.vhd|
+Z26 !s107 DetecteurFront_tb.vhd|
+!i113 1
+R11
+Atb
+R21
+R2
+R3
+DEx4 work 17 detecteurfront_tb 0 22 <a>EPd2];517kZcGnRk:30
+!i122 12
+l12
+L7 59
+VI<j46d[B95]5V@?4HHI[L1
+!s100 AH0iCWHfiYkE5_mc^ZOk]3
+R6
+32
+R7
+!i10b 1
+R8
+R25
+R26
+!i113 1
+R11
+Ediviseurfrequence
+Z27 w1760720475
+R2
+R3
+!i122 13
+R0
+Z28 8DiviseurFrequence/DiviseurFrequence.vhd
+Z29 FDiviseurFrequence/DiviseurFrequence.vhd
+l0
+L4 1
+VYob8b=^G8i_zWj?S950VE0
+!s100 LPTK`MbY9zTNY_OI^dfP03
+R6
+32
+R7
+!i10b 1
+R8
+Z30 !s90 -reportprogress|300|DiviseurFrequence/DiviseurFrequence.vhd|
+Z31 !s107 DiviseurFrequence/DiviseurFrequence.vhd|
+!i113 1
+R11
+Abehavior
+R2
+R3
+DEx4 work 17 diviseurfrequence 0 22 Yob8b=^G8i_zWj?S950VE0
+!i122 13
+l17
+L14 22
+VTZ@MQCG4z;zGTg_1:YHA^0
+!s100 KIV[NHN97AjTf[8;7@?]B3
+R6
+32
+R7
+!i10b 1
+R8
+R30
+R31
+!i113 1
+R11

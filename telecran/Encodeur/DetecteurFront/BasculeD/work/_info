@@ -1,0 +1,90 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/sdpr/Documents/FPGA/Controlleur_HDMI/Detecteur_Front_montant/BasculeD
+Ebasculed
+Z1 w1760622423
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+R0
+Z4 8BasculeD.vhd
+Z5 FBasculeD.vhd
+l0
+L4 1
+VH50UC8C96`:3?ZBBGddSn2
+!s100 jYMOC15zfTS6h1<zRSo=m0
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1760622644
+!i10b 1
+Z8 !s108 1760622644.000000
+Z9 !s90 -reportprogress|300|BasculeD.vhd|
+Z10 !s107 BasculeD.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+Z12 DEx4 work 8 basculed 0 22 H50UC8C96`:3?ZBBGddSn2
+!i122 4
+l14
+L13 11
+VHi2g5fQ=WSX:zL@2>THA?0
+!s100 1HlNdS><zKBbKGc3BQ3lZ0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Ebasculed_tb
+Z13 w1760622641
+R2
+R3
+!i122 5
+R0
+Z14 8BasculeD_tb.vhd
+Z15 FBasculeD_tb.vhd
+l0
+L4 1
+VDCS;:cznjiBYb0<TMFXm70
+!s100 UUoo?K<o1Dj=0m1f_m:eR1
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|BasculeD_tb.vhd|
+Z17 !s107 BasculeD_tb.vhd|
+!i113 1
+R11
+Atb
+R12
+R2
+R3
+Z18 DEx4 work 11 basculed_tb 0 22 DCS;:cznjiBYb0<TMFXm70
+!i122 5
+l12
+Z19 L7 45
+V@O@@9QnVh7=9zU?]EoB7b1
+!s100 A4J@FGbdX03D[>EZ91;od3
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
