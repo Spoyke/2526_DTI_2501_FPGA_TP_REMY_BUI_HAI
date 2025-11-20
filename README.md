@@ -82,6 +82,8 @@ Le code a été validé.
 
 ## 3 - Contrôleur HDMI
 
+4) Pour implémenter le contrôleur HDMI, on crée un nouveau composant et on assigne les entrées et les sorties de 
+
 5) Après avoir fait les modifications nécessaire, on affiche :
 
 ![Image](Display_1.png)
@@ -114,7 +116,7 @@ Dans le premier, on écrit dans la ram la valeur "11111111" dans à l'adresse $a
 
 Dans le second process, on lit en permanance les données stockées dans la RAM et on écrit cette valeur sur l'écran (en l'adaptant pour que l'octet de la RAM soit duppliqué 3 fois pour pouvoir être stocké sur une varaible de 24 bits). 
 
-## 6 - Effacement 
+## 6 - Effacement 
 
 Pour l'effacement, on regarde si le push-button de l'encodeur gauche est appuyé. Si il n'est pas actionné, dans la partie lecture de la RAM, on lit l'adresse donnée par le contrôleur HDMI et on affiche cette valeur sur l'écran. Sinon, on réinitialise la RAM en écrivant des 0 et on affiche des pixels noirs sur l'écran.
 
