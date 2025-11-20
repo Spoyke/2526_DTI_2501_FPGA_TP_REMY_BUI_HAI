@@ -86,13 +86,22 @@ Le code a été validé.
 
 ![Image](Display_1.png)
 
-Les bits qui correspondent au rouge sont les bits 23 à 16
-Les bits qui correspondent au vert sont les bits 15 à  8
-Les bits qui correspondent au bleu sont les bits 7 à 0 (tous mis à 0)
+Les bits qui correspondent au rouge sont les bits 23 à 16.
+
+Les bits qui correspondent au vert sont les bits 15 à  8.
+
+Les bits qui correspondent au bleu sont les bits 7 à 0 (tous mis à 0).
 
 
 
+## 5 - Mémorisation
 
+1) Une mémoire dual-port est une structure de mémoire qui comporte 2 canaux de communication qui peuvent tous les deux supporter l'écriture ou la lecture.
+
+2) 
+Voici un schéma pour le fonctionnement de la RAM:
+
+![Image](Ram.png)
 
 
 
