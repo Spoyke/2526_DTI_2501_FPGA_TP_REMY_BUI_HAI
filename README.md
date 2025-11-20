@@ -103,5 +103,9 @@ Voici un schéma pour le fonctionnement de la RAM:
 
 ![Image](Ram.png)
 
+## 6 - Effacement 
 
+Pour l'effacement, on regarde si le push-button de l'encodeur gauche est appuyé. Puis, dans la partie de lecture, on regarde l'état du bouton. Si il n'est pas actionné, on lit l'adresse donnée par le contrôleur HDMI et on affiche cette valeur sur l'écran. Sinon, on réinitialise la RAM en écrivant des 0 et on affiche des pixels noirs sur l'écran.
+
+A noter que l'effacement par du principe que la durée d'un appuie sur le bouton est plus long que la durée d'un rafraichissement de l'écran.
 
