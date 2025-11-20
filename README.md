@@ -37,8 +37,8 @@ On obtient : led0 <= not pushl;
 
 ![Image](Schema_led_blink_og.png)
 
-Faire la comparaison
-
+Pour générer le signal o_led qui fait clignoter la LED, on utilise une bascule D dont la sortie alterne entre 0 et 1 à la fréquence de l'horloge.
+Notre schéma et celui proposé par quartus sont équivalents et reprennent le même fonctionnement.
 
 7) En adaptant la fréquence, on a :
 
@@ -50,7 +50,8 @@ Faire la comparaison
 
 ![Image](Schema_led_blink_delay_og.jpg)
 
-Faire la comparaison
+On utilise un compteur pour diviser la fréquence 50Mhz en quelque chose de plus petit (ici notre compteur est sur 23 bits car cela permet de coder 5Mhz). La première bascule renvoie la valeur du compteur. Celle-ci est incrémenté en amont par l'opérateur Add0. En aval, on compare la valeur du comparateur avec 5 millions. Si c'est le cas, on change la valeur de la sortie o_led et on reinitialise le compteur avec le multiplexeur.
+Pour comparer les schémas, le fonctionnement reste globalement le même sauf que le notre est une représentation plus conceptuelle.
 
 11) Le "_n" dans "i_rst_n" signifie que l'entrée est inversé. Ce qui signifie que l'entrée est active à l'état bas. 
 
@@ -112,9 +113,13 @@ A noter qu'il n'y a pas de limitations sur la valeurs des encodeurs. Ainsi, si l
 
 3 et 4) On connecte le composants dpram créé à des signaux créé pour ce composant. Puis, pour écrire ou lire des données dans la RAM, on crée 2 process. 
 
-Dans le premier, on écrit dans la ram la valeur "11111111" dans à l'adresse $adresse = x\_compteur\_controleur\_hdmi + y\_compteur\_controleur\_hdmi * 720$. Ainsi, on stocke dans la RAM des "ligne" de $720*8$ bits correspondant aux lignes de l'écran (la ligne en y=0 de la RAM correspond à la ligne la plus huate de l'écran).  
+Dans le premier, on écrit dans la ram la valeur "11111111" dans à l'adresse $adresse = x_{compteur ~controleur~hdmi} + y_{compteur~controleur~hdmi} * 720$. Ainsi, on stocke dans la RAM des "ligne" de $720*8$ bits correspondant aux lignes de l'écran (la ligne en y=0 de la RAM correspond à la ligne la plus huate de l'écran).  
 
 Dans le second process, on lit en permanance les données stockées dans la RAM et on écrit cette valeur sur l'écran (en l'adaptant pour que l'octet de la RAM soit duppliqué 3 fois pour pouvoir être stocké sur une varaible de 24 bits). 
+
+6) On a bien la mémorisation
+
+![Image](Capture_memorisation.png)
 
 ## 6 - Effacement 
 
