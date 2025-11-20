@@ -11,8 +11,8 @@ entity telecran is
         i_clk_50: in std_logic;
 
         -- HDMI
-        io_hdmi_i2c_scl       : inout std_logic;
-        io_hdmi_i2c_sda       : inout std_logic;
+        io_hdmi_i2c_scl      : inout std_logic;
+        io_hdmi_i2c_sda      : inout std_logic;
         o_hdmi_tx_clk        : out std_logic;
         o_hdmi_tx_d          : out std_logic_vector(23 downto 0);
         o_hdmi_tx_de         : out std_logic;
@@ -121,6 +121,8 @@ architecture rtl of telecran is
 	 
     constant h_res : natural := 720;
     constant v_res : natural := 480;
+	 constant data_width  : natural := 8;
+	 constant mem_size    : natural := 720 * 480;
 
 	signal s_clk_27 : std_logic;
 	signal s_rst_n : std_logic;	-- holds reset as long as pll is not locked
@@ -131,14 +133,14 @@ architecture rtl of telecran is
 	signal s_x_counter : natural := 0;
 	signal s_y_counter : natural := 0;
 	
-	signal s_data_a    : in std_logic_vector(data_width-1 downto 0);
-	signal s_data_b    : in std_logic_vector(data_width-1 downto 0);
-	signal s_addr_a    : in natural range 0 to mem_size-1;
-	signal s_addr_b    : in natural range 0 to mem_size-1;
-	signal s_we_a      : in std_logic := '1';
-	signal s_we_b      : in std_logic := '1';
-	signal s_q_a       : out std_logic_vector(data_width-1 downto 0);
-	signal s_q_b       : out std_logic_vector(data_width-1 downto 0)
+	signal s_data_a    : std_logic_vector(data_width-1 downto 0);
+	signal s_data_b    : std_logic_vector(data_width-1 downto 0);
+	signal s_addr_a    : natural range 0 to mem_size-1;
+	signal s_addr_b    : natural range 0 to mem_size-1;
+	signal s_we_a      : std_logic := '1';
+	signal s_we_b      : std_logic := '1';
+	signal s_q_a       : std_logic_vector(data_width-1 downto 0);
+	signal s_q_b       : std_logic_vector(data_width-1 downto 0);
 begin
 	--o_leds <= (others => '0');
 	o_de10_leds <= (others => '0');
@@ -195,7 +197,7 @@ begin
 	  o_y_counter => s_y_counter
 	);
 	
-	DpRam : component dpram
+	dp_ram : component dpram
 	port map (
 		i_clk_a => i_clk_50,
 		i_clk_b => i_clk_50,
@@ -216,37 +218,37 @@ begin
 	--o_hdmi_tx_d(7 downto 0) <= (others => '0');
 	
 	
-	o_leds <= "0000000001" when s_encodeur_counter_d = 1 else
-				 "0000000011" when s_encodeur_counter_d = 2 else
-				 "0000000111" when s_encodeur_counter_d = 3 else
-				 "0000001111" when s_encodeur_counter_d = 4 else
-				 "0000011111" when s_encodeur_counter_d = 5 else
-				 "0000111111" when s_encodeur_counter_d = 6 else
-				 "0001111111" when s_encodeur_counter_d = 7 else
-				 "0011111111" when s_encodeur_counter_d = 8 else
-				 "0111111111" when s_encodeur_counter_d = 9 else
-				 "1111111111" when s_encodeur_counter_d = 10 else
-				 (others => '0');
+	--o_leds <= "0000000001" when s_encodeur_counter_d = 1 else
+	--			 "0000000011" when s_encodeur_counter_d = 2 else
+	--			 "0000000111" when s_encodeur_counter_d = 3 else
+	--			 "0000001111" when s_encodeur_counter_d = 4 else
+	--			 "0000011111" when s_encodeur_counter_d = 5 else
+	--			 "0000111111" when s_encodeur_counter_d = 6 else
+	--			 "0001111111" when s_encodeur_counter_d = 7 else
+	--			 "0011111111" when s_encodeur_counter_d = 8 else
+	--			 "0111111111" when s_encodeur_counter_d = 9 else
+	--			 "1111111111" when s_encodeur_counter_d = 10 else
+	--			 (others => '0');
 			
 			
 	process (i_clk_50) -- Ecriture d'un pixel noir sur l'écran
 	begin
-		if (s_encodeur_counter_g = s_x_counter) and (s_encodeur_counter_d = s_y_counter) then
-			o_hdmi_tx_d <= (others => '0'); -- Ecrire dans la ram plutot que sur l'écran
-		else
-			o_hdmi_tx_d <= (others => '1');
-		end if;
+		s_we_b <= '1';
+		s_data_b <= "11111111";
+		s_addr_b <= s_encodeur_counter_d * 720 + s_encodeur_counter_g;
 	end process;
 	
 	process (i_clk_50) -- Lecture des adresses de la ram
 	begin
-		s_addr_a <= s_x_counter * s_y_counter;
-		s_we_a <= '0';
+		s_addr_a <= s_y_counter * 720 + s_x_counter;
 		
-		if (s_q_a = "11111111") then -- Si dans la RAM, on a 11111111 alors on met un pixel noir
-			o_hdmi_tx_d <= (others => '1');
-		else -- sinon on met un pixel blanc
+		if i_left_pb = '0' then 
+			s_we_a <= '1';
+			s_data_a <= "00000000";
 			o_hdmi_tx_d <= (others => '0');
+		else
+			s_we_a <= '0';
+			o_hdmi_tx_d <= s_q_a & s_q_a & s_q_a;
 		end if;
 	end process;
 end architecture rtl;
