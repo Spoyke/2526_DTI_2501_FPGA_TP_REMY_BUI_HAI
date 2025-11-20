@@ -3,8 +3,6 @@ Compte rendu des TPs de FPGA avec le projet quartus
 
 Le but de ce TP est de se familiariser avec Quartus et d'utiliser nos compétences pour faire un écran magique. Dans un premier temps, on suit un tutoriel Quartus puis dans un deuxième temps, on se lance dans le projet écran Magic.
 
-# TP Séance 1
-
 ## 1 - Création d'un projet 
 
 On suit la démarche de création de projet
