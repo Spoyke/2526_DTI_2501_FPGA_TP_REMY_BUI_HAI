@@ -113,7 +113,7 @@ A noter qu'il n'y a pas de limitations sur la valeurs des encodeurs. Ainsi, si l
 
 3 et 4) On connecte le composants dpram créé à des signaux créé pour ce composant. Puis, pour écrire ou lire des données dans la RAM, on crée 2 process. 
 
-Dans le premier, on écrit dans la ram la valeur "11111111" dans à l'adresse $adresse = x_{compteur ~controleur~hdmi} + y_{compteur~controleur~hdmi} * 720$. Ainsi, on stocke dans la RAM des "ligne" de $720*8$ bits correspondant aux lignes de l'écran (la ligne en y=0 de la RAM correspond à la ligne la plus huate de l'écran).  
+Dans le premier, on écrit dans la ram la valeur "11111111" dans à l'adresse adresse = x_compteur_controleur_hdmi + y_compteur_controleur_hdmi * 720$. Ainsi, on stocke dans la RAM des "ligne" de $720*8$ bits correspondant aux lignes de l'écran (la ligne en y=0 de la RAM correspond à la ligne la plus huate de l'écran).  
 
 Dans le second process, on lit en permanance les données stockées dans la RAM et on écrit cette valeur sur l'écran (en l'adaptant pour que l'octet de la RAM soit duppliqué 3 fois pour pouvoir être stocké sur une varaible de 24 bits). 
 
