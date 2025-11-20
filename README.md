@@ -41,7 +41,7 @@ Notre schéma et celui proposé par quartus sont équivalents et reprennent le m
 7) En adaptant la fréquence, on a :
 
 
-![Image](Schema_led_blink_delay.png)
+![Image](Schema_led_blink_delay1.png)
 
 
 8) On a le nouveau schéma sur RTL Viewer:
